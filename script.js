@@ -511,21 +511,33 @@
 // diffMaxMin([44, 32, 86, 19]) ;
 
 
-//Написати функцію, яка видаляє всі елемнти, що не є цифрами і повертає новий масив,
+// Написати функцію, яка видаляє всі елемнти, що не є цифрами і повертає новий масив,
 // який складається лише з цифр.
-//Наприклад:
-//filterList([1, 2, 3, "x", "y", 10]) ➞ [1, 2, 3, 10]
-//filterList([1, "a", 2, "b", 3, "c"]) ➞ [1, 2, 3]
-//filterList([0, -32, "&@A", 64, "99", -128]) ➞ [0, -32, 64, -128]
+// Наприклад:
+// filterList([1, 2, 3, "x", "y", 10]) ➞ [1, 2, 3, 10]
+// filterList([1, "a", 2, "b", 3, "c"]) ➞ [1, 2, 3]
+// filterList([0, -32, "&@A", 64, "99", -128]) ➞ [0, -32, 64, -128]
 
 // function filterList (arr){
 // for ( let i = 0; i < arr.length; i++){
-//     if (!+arr[i] && arr[i] !== 0 || typeof(arr[i]) === "string") {
-//           arr.splice(arr.indexOf(arr[i]), 1);
+//     if (typeof(arr[i]) === "string") {
+//             arr.splice(arr.indexOf(arr[i]), 1);
 //     }
 // }
 // console.log(arr);
 // }
-// filterList([1, 2, 3, "x", "y", 10]);
-// filterList([1, "a", 2, "b", 3, "c", "93"]);
-// filterList([0, -32, "&@A", 64, "99", -128])
+
+
+function filterList (arr){
+for (let i=arr.length-1; i>=0; i--) {
+    if (typeof(arr[i]) == "string") {
+             arr.splice(i, 1);        
+    }
+}
+console.log(arr);
+}
+
+filterList([1, 2, 3, "x", "y", 10]);
+filterList([1, "a", 2, "b", 3, "c", "93"]);
+filterList([0, -32, "&@A", 64, "99", -128])
+
